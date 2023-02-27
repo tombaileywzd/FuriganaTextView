@@ -59,6 +59,7 @@ public class UIFuriganaTextView: UIView
     
     fileprivate func setup()
     {
+        backgroundColor = .clear
         underlyingTextView?.removeFromSuperview()
         
         if furiganaEnabled
@@ -93,6 +94,7 @@ public class UIFuriganaTextView: UIView
             textStorage.addLayoutManager(layoutManager)
             
             let textView = textViewWithTextContainer(textContainer)
+            textView.backgroundColor = .clear
             addSubview(textView)
             addConstraints(fullLayoutConstraints(textView))
             
@@ -106,6 +108,7 @@ public class UIFuriganaTextView: UIView
         if let validContents = mutableContents
         {
             let textView = textViewWithTextContainer(nil)
+            textView.backgroundColor = .clear
             textView.attributedText = validContents
             addSubview(textView)
             addConstraints(fullLayoutConstraints(textView))
