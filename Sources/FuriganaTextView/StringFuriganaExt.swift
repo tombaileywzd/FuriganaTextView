@@ -23,11 +23,11 @@ public struct Furigana
   }
 }
 
-public let kFuriganaAttributeName = "com.liulishuo.Furigana"
+let kFuriganaAttributeName = "com.liulishuo.Furigana"
 
 private let kFuriganaRepresentationFormatter = "|"
 
-public func FuriganaStringRepresentation(_ furigana: Furigana) -> NSString
+func FuriganaStringRepresentation(_ furigana: Furigana) -> NSString
 {
   let values: NSArray = [
     furigana.text,
@@ -37,19 +37,19 @@ public func FuriganaStringRepresentation(_ furigana: Furigana) -> NSString
   return values.componentsJoined(by: kFuriganaRepresentationFormatter) as NSString
 }
 
-public func FuriganaTextFromStringRepresentation(_ string: NSString) -> NSString?
+func FuriganaTextFromStringRepresentation(_ string: NSString) -> NSString?
 {
   return string.components(separatedBy: kFuriganaRepresentationFormatter).first as NSString?
 }
 
-public func FuriganaOriginalTextFromStringrepresentation(_ string: NSString) -> NSString?
+func FuriganaOriginalTextFromStringrepresentation(_ string: NSString) -> NSString?
 {
   return string.components(separatedBy: kFuriganaRepresentationFormatter).last as NSString?
 }
 
 private let kCharLength = 1
 
-public extension NSString
+extension NSString
 {
   
   public func substringAtIndex(_ index: Int) -> String
